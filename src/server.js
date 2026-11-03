@@ -11,13 +11,13 @@ const app = express();
 
 app.use(express.json());
 
-// Configuração das sessões.
+// Aqui está a config das sessões
 app.use(session({
     name: "pokemon.sid",
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-
+// Os cookies servem paravincular sessões aos usuários
     cookie: {
         maxAge: 2 * 60 * 1000,
         httpOnly: true,
@@ -39,9 +39,7 @@ app.get("/health", (req, res) => {
 app.get("/pokemon/:nome", exigirSessao, async (req, res) => {
     try {
         const nome = req.params.nome;
-
         const pokemon = await buscarPokemon(nome);
-
         res.status(200).json(pokemon);
 
     } catch (erro) {

@@ -24,15 +24,8 @@ app.use(session({
             sameSite: "lax",
             secure: false
         }
-    })); ,
-    cookie: {
-        maxAge: 2 * 60 * 1000,
-        httpOnly: true,
-        sameSite: "lax",
-        secure: false
-    }
-}));
-
+    }));
+    
 app.use("/auth", authRoutes);
 
 app.get("/health", (req, res) => {

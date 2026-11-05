@@ -13,11 +13,18 @@ app.use(express.json());
 
 // Aqui está a config das sessões
 app.use(session({
-    name: "pokemon.sid",
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-// Os cookies servem paravincular sessões aos usuários
+        name: "pokemon.sid",
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+    
+        cookie: {
+            maxAge: 2 * 60 * 1000,
+            httpOnly: true,
+            sameSite: "lax",
+            secure: false
+        }
+    })); ,
     cookie: {
         maxAge: 2 * 60 * 1000,
         httpOnly: true,

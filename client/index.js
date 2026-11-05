@@ -58,9 +58,9 @@ async function menu() {
     let opcao;
 
     do {
-        console.log("\n=== POKEMON SESSION ===");
-        console.log("1 - Verificar servidor");
-        console.log("2 - Cadastrar usuário");
+        console.log("\n---- POKEMON SESSÃO ----");
+        console.log("1 - Verificar o servidor");
+        console.log("2 - Cadastrar um usuário");
         console.log("3 - Fazer login");
         console.log("4 - Consultar Pokémon");
         console.log("5 - Fazer logout");

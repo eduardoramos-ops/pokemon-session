@@ -5,7 +5,6 @@ const express = require("express");
 const tokenRoutes = require("./routes/token.routes");
 const { buscarPokemon } = require("./services/pokeapi");
 const { exigirToken } = require("./middlewares/autenticacao-token");
-
 const app = express();
 
 app.use(express.json());
@@ -15,7 +14,7 @@ app.use("/auth", tokenRoutes);
 app.get("/health", (req, res) => {
     res.status(200).json({
         status: "ok",
-        message: "Servidor de token funcionando!"
+        message: `Prezado estudante, lembre-se, seu tempo está contado. De: CLT para: estudante desempregado..`
     });
 });
 

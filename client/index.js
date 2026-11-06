@@ -6,7 +6,7 @@ const rl = readline.createInterface({
     output: stdout
 });
 
-const SERVIDOR = "http://127.0.0.1:3000";
+const SERVIDOR = "http://192.168.3.175:3000";
 
 let cookieSessao = "";
 
